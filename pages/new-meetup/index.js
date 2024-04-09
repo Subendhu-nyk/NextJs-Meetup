@@ -7,7 +7,7 @@ const NewMeetupPage=()=>{
 
 
 
-return(
+return(    
     <NewMeetupForm onAddMeetup={addMeetupHandler}/>
 )
 }
