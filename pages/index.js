@@ -1,7 +1,10 @@
+import Head from 'next/head';
 import MeetupList from '../components/meetups/MeetupList'
 import Layout from '../components/layout/Layout'
-import { useEffect } from 'react';
+import { Fragment, useEffect } from 'react';
 import { MongoClient } from 'mongodb';
+
+
 
 // const DUMMY_MEETUPS = [
 //     {
@@ -25,9 +28,14 @@ const HomePage = (props) => {
   // useEffect(()=>{
   //   setLoadedMeetups(DUMMY_MEETUPS)
   // },[])
-  return (    
-        <MeetupList meetups={props.meetups} />   
-    
+  return (   
+    <Fragment>
+        <Head>
+          <title>React Meetups</title>
+          <meta name='description' content='Browse a huge list of highly active react meetups!'/>
+        </Head>
+       <MeetupList meetups={props.meetups} />
+    </Fragment>
   )
 }
 
